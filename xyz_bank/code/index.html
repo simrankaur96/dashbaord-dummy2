@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="dashboardViewer">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>RBS Customer Dashboard</title>
+    <link href="../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/colors/blue.css" id="theme" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.js"></script>
+    <script src="appModule.js"></script>
+    <script src="dashboardController.js"></script>
+</head>
+
+<body class="fix-header fix-sidebar card-no-border" ng-controller="DashboardController" >
+    <div class="preloader">
+        <svg class="circular" viewBox="25 25 50 50">
+            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" /> </svg>
+    </div>
+    <div id="main-wrapper">
+        <header class="topbar" style = "position : fixed; top: 0px; width: 1263px;">
+            <nav class="navbar top-navbar navbar-toggleable-sm navbar-light">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html">
+                        <b>
+
+                        <img src="../assets/images/logo-icon.png" alt="homepage" class="dark-logo" width = 200px height = 50px />
+                            
+                        </b>
+                    </a>
+                </div>
+                <div class="navbar-collapse">
+                    <ul class="navbar-nav mr-auto mt-md-0 ">
+                        <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
+                        <li class="nav-item hidden-sm-down">
+                            <form class="app-search p-l-20" ng-submit="search(username)">
+                                <input type="text" class="form-control" placeholder="CIN" ng-model="username"> <a class="srh-btn" ><i class="ti-search" ng-click="search(username)"></i></a>
+                            </form>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav my-lg-0">
+                        <li class="nav-item dropdown">
+                            </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <aside class="left-sidebar">
+            <div class="scroll-sidebar" >
+                <nav class="sidebar-nav text-themecolor"  >
+                    <table id="sidebarnav" style = "text-align:left;">
+                                    <tr>
+                                    <th>Customer ID:</th>
+                                    <td><b>{{user.cin}}</b></td> 
+                                  </tr>
+                                    <tr>
+                                      <th>Name:</th>
+                                      <td><b>{{user.name}}</b></td> 
+                                    </tr>
+                                    <tr>
+                                        <th>Customer Type:</th>
+                                        <td><b>{{user.customerType}}</b></td> 
+                                    </tr>
+                                    <tr>
+                                        <th>Address:</th>
+                                        <td><b>{{user.address}}</b></td> 
+                                    </tr>
+                                    <tr>
+                                            <th>Country of Residence:</th>
+                                            <td><b>{{user.residenceCountry}}</b></td> 
+                                          </tr>  
+                                          <tr>
+                                                <th>Country of Incorporation:</th>
+                                                <td><b>{{user.incorporationCountry}}</b></td> 
+                                              </tr>
+                                              <tr>
+                                                    <th>Industry Classification:</th>
+                                                    <td><b>{{user.industryClassification}}</b></td> 
+                                                  </tr>
+                                    </table>    
+                                  </nav>
+            </div>
+        </aside>
+        <div class="page-wrapper">
+            <div class="container-fluid">
+                <div class="row page-titles">
+                    <div class="col-md-6 col-8 align-self-center">
+                        <h1 class="text-themecolor m-b-0 m-t-0"><i>Customer Dashboard</i></h1>
+                       
+                    </div>
+                  
+                </div>
+                <div class="row">
+                    <div class="col-sm-6" >
+                        <div class="card" style = "height: 350px;">
+                            <div class="card-block" >
+                                <h4 class="card-title">Retail Banking</h4>
+                                <div class="text-right">
+                                    <h2 class="font-light m-b-0"></h2>
+                                    <span class="text-muted"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="card" style = "height: 350px;">
+                            <div class="card-block">
+                                <h4 class="card-title">Asset Finance</h4>
+                                <div class="text-right">
+                                    <h2 class="font-light m-b-0"> </h2>
+                                    <span class="text-muted"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="card" style = "height: 350px;">
+                            <div class="card-block">
+                                <h4 class="card-title">Trade Finance</h4>
+                                <div class="text-right">
+                                    <h2 class="font-light m-b-0"> </h2>
+                                    <span class="text-muted"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 text-themecolor">
+                        <div class="card" style = "height: 350px;">
+                            <div class="card-block ">
+                                <h4 class="card-title">Supply Chain Management</h4>
+                                <div class="text-right">
+                                    <h2 class="font-light m-b-0"> </h2>
+                                    <span class="text-muted"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+            
+            <footer class="footer text-center">
+                © 2018 Chennai
+            </footer>
+        </div>
+    </div>
+    <script src="../assets/plugins/jquery/jquery.min.js"></script>
+    <script src="../assets/plugins/bootstrap/js/tether.min.js"></script>
+    <script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/jquery.slimscroll.js"></script>
+    <script src="js/waves.js"></script>
+    <script src="js/sidebarmenu.js"></script>
+    <script src="../assets/plugins/sticky-kit-master/dist/sticky-kit.min.js"></script>
+    <script src="js/custom.min.js"></script>
+    <script src="../assets/plugins/styleswitcher/jQuery.style.switcher.js"></script>
+</body>
+
+</html>
